@@ -102,7 +102,7 @@ fun LoginUI() {
         // need to do an api call here
         // we must send the entered email and password to the server in json format
         // then the backend must check whether this account exists or not
-        // as if the password it correct
+        // and check if the password it correct
         // and then it must return maybe a boolean within a json
 
         if(email=="test" && password=="test"){
