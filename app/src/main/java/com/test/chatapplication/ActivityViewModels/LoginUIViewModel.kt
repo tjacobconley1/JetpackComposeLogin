@@ -11,4 +11,6 @@ class LoginUIViewModel : ViewModel() {
 
     var email: LiveData<String> = _email
     var password: LiveData<String> = _password
+
 }
+

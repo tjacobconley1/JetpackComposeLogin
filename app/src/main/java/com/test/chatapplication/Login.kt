@@ -81,13 +81,14 @@ fun LoginUIScreen(LoginUIViewModel: LoginUIViewModel){
 //        onPasswordChange = {password=it},
 //        onSuccessfulVerify = {validUser=it}
 //    )
+    val viewModel : LoginUIViewModel
 
-    LoginUI()
+    LoginUI(LoginUIViewModel.email.toString(), LoginUIViewModel.password.toString())
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginUI() {
+fun LoginUI(email: String, password: String) {
 
     val mContext = LocalContext.current
     var email by rememberSaveable { mutableStateOf("") }
@@ -107,6 +108,8 @@ fun LoginUI() {
 
         if(email=="test" && password=="test"){
             Toast.makeText(context, "Logged In", Toast.LENGTH_SHORT).show()
+            // im starting an activity within a composable
+            // does this composable destroy itself?
             context.startActivity(Intent(context, UserProfileActivity::class.java))
         }else{
             Toast.makeText(context, "Incorrect email or password", Toast.LENGTH_SHORT).show()
