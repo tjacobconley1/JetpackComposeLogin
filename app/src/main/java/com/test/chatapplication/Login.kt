@@ -38,6 +38,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.test.chatapplication.ActivityViewModels.LoginUIViewModel
@@ -184,4 +185,18 @@ fun LoginUI(email: String, password: String) {
 //    context.startActivity(Intent(context, UserProfileActivity::class.java))
 //}
 
+@Preview(showBackground = true)
+@Composable
+fun loginPreview(){
+    ChatApplicationTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            LoginUIScreen(LoginUIViewModel())
+        }
+    }
 
+
+}
